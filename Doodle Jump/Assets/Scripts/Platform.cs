@@ -17,5 +17,9 @@ public class Platform : MonoBehaviour {
 				rb.velocity = velocity;
 			}
 		}	
+	}
+	public void OnBecameInvisible() {
+		Destroy (gameObject);
+	
 	} 
 }

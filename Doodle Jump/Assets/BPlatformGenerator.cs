@@ -2,8 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class LevelGenerator : MonoBehaviour {
-	//reference to the platform
+public class BPlatformGenerator : MonoBehaviour {
+
+	
 	public GameObject platformPrefab;
 	//no. of platforms that needs to be stored
 	public int numberOfPlatforms = 200;
@@ -22,7 +23,6 @@ public class LevelGenerator : MonoBehaviour {
 			Instantiate(platformPrefab, spawnPosition, Quaternion.identity);
 		}
 	}
-	
 	// Update is called once per frame
 	void Update () {
 		
