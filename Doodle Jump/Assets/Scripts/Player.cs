@@ -18,6 +18,17 @@ public class Player : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		movement = Input.GetAxis("Horizontal") * movementSpeed;
+		
+		Vector3 pos = transform.position;
+
+		if (pos.x > 2.7f)  {
+			pos.x = -2.7f;
+		}
+		else if (pos.x <-2.7f) {
+			pos.x = 2.7f;
+		}
+		transform.position = pos;
+		
 	}
 
 	void FixedUpdate()
