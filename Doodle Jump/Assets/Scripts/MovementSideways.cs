@@ -6,7 +6,7 @@ public class MovementSideways : MonoBehaviour {
 	public float speed = 10f;
 	float leftBound;
 	float rightBound;
-	float radius = 0f;
+	public float radius = 0f;
 	int direction = -1;
 
 	// Use this for initialization
@@ -17,16 +17,11 @@ public class MovementSideways : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+		transform.Translate(Vector3.right * direction * speed * Time.deltaTime);
+
 		if(transform.position.x <leftBound + radius || transform.position.x >rightBound - radius)
 		{
 			direction *= -1;
 		}
-		
-		transform.Translate(Vector3.right * direction * speed * Time.deltaTime);
-	}
-
-	void MoveInAStraightline(){
-		Vector3 dir = Vector3.right * speed* Time.deltaTime;
-		transform.Translate(dir);
 	}
 }

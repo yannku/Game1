@@ -6,6 +6,7 @@ using UnityEngine;
 public class Player : MonoBehaviour {
 
 	public float movementSpeed = 10f;
+	public bool canControl = true;
 	
 	Rigidbody2D rb;
 	float movement = 0f;
@@ -17,6 +18,8 @@ public class Player : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+		if (!canControl) return;
+
 		movement = Input.GetAxis("Horizontal") * movementSpeed;
 		
 		Vector3 pos = transform.position;

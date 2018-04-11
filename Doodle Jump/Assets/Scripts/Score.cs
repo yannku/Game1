@@ -6,8 +6,15 @@ public class Score : MonoBehaviour {
 	public Transform player;
 	public Text scoreText;
 	
+	private float score;
+	
 	// Update is called once per frame
 	void Update () {
-		scoreText.text = player.position.y.ToString("0");
+
+		if(player.position.y >= score){
+			score= player.position.y;
+		}
+		
+		scoreText.text = score.ToString("0");
 	}
 }
