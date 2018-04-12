@@ -224,6 +224,7 @@ GameObject:
   - component: {fileID: 775835005}
   - component: {fileID: 775835008}
   - component: {fileID: 775835009}
+  - component: {fileID: 775835010}
   m_Layer: 0
   m_Name: Doodler
   m_TagString: Untagged
@@ -346,6 +347,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   movementSpeed: 10
   canControl: 1
+  movement: 0
+--- !u!114 &775835010
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 775835004}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b10d5e9f0ab54bd4e847796fe0973265, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 775835009}
 --- !u!1 &1317687929
 GameObject:
   m_ObjectHideFlags: 0

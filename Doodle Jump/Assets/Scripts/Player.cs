@@ -9,11 +9,12 @@ public class Player : MonoBehaviour {
 	public bool canControl = true;
 	
 	Rigidbody2D rb;
-	float movement = 0f;
+	public float movement = 0f;
 	
 	// Use this for initialization
 	void Start () {
 		rb= GetComponent<Rigidbody2D>();
+		Time.timeScale = 1;
 	}
 	
 	// Update is called once per frame
@@ -40,4 +41,19 @@ public class Player : MonoBehaviour {
 		velocity.x = movement;
 		rb.velocity = velocity;
 	}
+
+	void OnCollisionEnter2D(Collision2D coll) {
+		if(coll.collider.tag == "enemy")
+		{
+			Time.timeScale = 0;
+			//SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+		}
+	}
+
+	void OnBecameInvisible()
+	{
+		Time.timeScale = 0;
+		//SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+	}
+
 }
