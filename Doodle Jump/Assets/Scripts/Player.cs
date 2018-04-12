@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 [RequireComponent(typeof(Rigidbody2D))]
 public class Player : MonoBehaviour {
@@ -46,14 +47,14 @@ public class Player : MonoBehaviour {
 		if(coll.collider.tag == "enemy")
 		{
 			Time.timeScale = 0;
-			//SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+			SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
 		}
 	}
 
 	void OnBecameInvisible()
 	{
 		Time.timeScale = 0;
-		//SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+		SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
 	}
 
 }

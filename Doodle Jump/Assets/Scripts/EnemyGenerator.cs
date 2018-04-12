@@ -8,9 +8,10 @@ public class EnemyGenerator : MonoBehaviour {
 	//no. of platforms that needs to be stored
 	public int numberOfenemies = 5;
 	//stores width of the level
-	public float levelWidth = 3f;
+	public float levelWidth = 2f;
 	public float minY = 1f;
 	public float maxY = 2.5f;
+	float currentTop;
 	
 
 	// Use this for initialization
@@ -21,8 +22,26 @@ public class EnemyGenerator : MonoBehaviour {
 		{
 			spawnPosition.y += Random.Range(minY, maxY);
 			spawnPosition.x = Random.Range(-levelWidth, levelWidth);
-			Instantiate(enemyPrefab[Random.Range(0, enemyPrefab.Length)], spawnPosition, Quaternion.identity);
+			GameObject enemy =Instantiate(enemyPrefab[Random.Range(0, enemyPrefab.Length)], spawnPosition, Quaternion.identity);
+
+			Enemy ps =enemy.GetComponent <Enemy> ();
+			if(ps != null)
+				ps.SetGenerator(this);
 		}
+		currentTop= spawnPosition.y;
+		Debug.Log (currentTop);
+	}
+
+	public void MoveEnemy(Transform enemy)
+	{
+		currentTop += Random.Range(minY, maxY);
+		Debug.Log (currentTop);
+		Vector3 pos =enemy.position;
+
+		pos.y = currentTop;
+		pos.x = Random.Range(-levelWidth, levelWidth);
+
+		enemy.position = pos;
 	}
 }
 

@@ -21,6 +21,7 @@ GameObject:
   - component: {fileID: 4984694517558258}
   - component: {fileID: 212715698478371322}
   - component: {fileID: 58885455310939566}
+  - component: {fileID: 114476900570918504}
   m_Layer: 0
   m_Name: enemy_6
   m_TagString: enemy
@@ -56,6 +57,18 @@ CircleCollider2D:
   m_Offset: {x: -0.02179718, y: 0.004918039}
   serializedVersion: 2
   m_Radius: 0.31399333
+--- !u!114 &114476900570918504
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1517494632731626}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d8fbea731f5304f40b913d7789ce5cb6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  generator: {fileID: 0}
 --- !u!212 &212715698478371322
 SpriteRenderer:
   m_ObjectHideFlags: 1

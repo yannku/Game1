@@ -8,7 +8,7 @@ public class LevelGenerator : MonoBehaviour {
 	//no. of platforms that needs to be stored
 	public int numberOfPlatforms = 20;
 	//stores width of the level
-	public float levelWidth = 3f;
+	public static float levelWidth = 2.3f;
 	public float minY = 1f;
 	public float maxY = 2.5f;
 	float currentTop;
