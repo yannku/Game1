@@ -4,7 +4,14 @@ using UnityEngine;
 
 public class Platform : MonoBehaviour {
 
+	public LevelGenerator generator;
+
 	public float jumpForce = 10f;
+
+	public void SetGenerator(LevelGenerator lg)
+	{
+		generator = lg;
+	}
 	void OnCollisionEnter2D(Collision2D collision)
 	{
 		if(collision.relativeVelocity.y <= 0f) 
@@ -19,7 +26,8 @@ public class Platform : MonoBehaviour {
 		}	
 	}
 	public void OnBecameInvisible() {
-		Destroy (gameObject);
+		if(generator != null)
+			generator.MovePlatform(transform);
 	
 	} 
 }
