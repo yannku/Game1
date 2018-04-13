@@ -11,12 +11,14 @@ public class MovementSideways : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
+		
 		//leftBound = Camera.main.ViewportToWorldPoint(Vector3.zero).x;
 		//rightBound = Camera.main.ViewportToWorldPoint(Vector3.one).x;
 		
 	}
 	
 	// Update is called once per frame
+	//movement of the platforms by using the level width 
 	void Update () {
 		transform.Translate(Vector3.right * direction * speed * Time.deltaTime);
 

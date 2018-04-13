@@ -12,6 +12,7 @@ public class Platform : MonoBehaviour {
 	{
 		generator = lg;
 	}
+	//settind the jump force for when player hits the platform
 	void OnCollisionEnter2D(Collision2D collision)
 	{
 		if(collision.relativeVelocity.y <= 0f) 
@@ -25,6 +26,7 @@ public class Platform : MonoBehaviour {
 			}
 		}	
 	}
+	//moving platforms on top 
 	public void OnBecameInvisible() {
 		if(generator != null)
 			generator.MovePlatform(transform);

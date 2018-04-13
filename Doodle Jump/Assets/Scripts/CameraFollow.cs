@@ -9,6 +9,7 @@ public class CameraFollow : MonoBehaviour {
 
 		
 	// Update is called once per frame
+	//moving the camera with the player(when player goes up the camera moves with him)
 	void LateUpdate() {
 		if(target.position.y > transform.position.y)
 		{

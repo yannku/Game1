@@ -9,11 +9,14 @@ public class LevelGenerator : MonoBehaviour {
 	public int numberOfPlatforms = 20;
 	//stores width of the level
 	public static float levelWidth = 2.3f;
+	//min and max for the position of the enemies
 	public float minY = 1f;
 	public float maxY = 2.5f;
+	//last platform on top
 	float currentTop;
 
 	// Use this for initialization
+	//spawning platforms according to level width and max and min y (allways at random)
 	void Start () {
 		Vector3 spawnPosition = new Vector3();
 		for (int i = 0; i < numberOfPlatforms; i++)
@@ -32,6 +35,7 @@ public class LevelGenerator : MonoBehaviour {
 		Debug.Log (currentTop);
 	}
 	
+	//moving the last platfrom at the top
 	public void MovePlatform(Transform platform)
 	{
 		currentTop += Random.Range(minY, maxY);

@@ -5,16 +5,19 @@ using UnityEngine;
 public class EnemyGenerator : MonoBehaviour {
 
 	public GameObject[] enemyPrefab;
-	//no. of platforms that needs to be stored
+	//no. of enemies that needs to be stored
 	public int numberOfenemies = 5;
 	//stores width of the level
 	public float levelWidth = 2f;
+	//min and max for the position of the enemies
 	public float minY = 1f;
 	public float maxY = 2.5f;
+	//last enemy on top
 	float currentTop;
 	
 
 	// Use this for initialization
+	//spawning enemies according to level width and max and min y (allways at random)
 	void Start () {
 		
 		Vector3 spawnPosition = new Vector3();
@@ -32,6 +35,7 @@ public class EnemyGenerator : MonoBehaviour {
 		Debug.Log (currentTop);
 	}
 
+	//moving last enemy at the top
 	public void MoveEnemy(Transform enemy)
 	{
 		currentTop += Random.Range(minY, maxY);

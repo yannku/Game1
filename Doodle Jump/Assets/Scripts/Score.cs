@@ -9,6 +9,7 @@ public class Score : MonoBehaviour {
 	private float score;
 	
 	// Update is called once per frame
+	//setting the score arrording to the position of the player(each time the player goes up score increases)
 	void Update () {
 
 		if(player.position.y >= score){

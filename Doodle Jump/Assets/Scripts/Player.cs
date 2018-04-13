@@ -19,11 +19,12 @@ public class Player : MonoBehaviour {
 	}
 	
 	// Update is called once per frame
+	//getting the movement of the player using the arrows
 	void Update () {
 		if (!canControl) return;
 
 		movement = Input.GetAxis("Horizontal") * movementSpeed;
-		
+		//when player goes to the far right he appears on the far left or vice versa
 		Vector3 pos = transform.position;
 
 		if (pos.x > 2.7f)  {
@@ -42,7 +43,7 @@ public class Player : MonoBehaviour {
 		velocity.x = movement;
 		rb.velocity = velocity;
 	}
-
+	//when player hits the enemy the game stops and game over loads
 	void OnCollisionEnter2D(Collision2D coll) {
 		if(coll.collider.tag == "enemy")
 		{
@@ -50,7 +51,7 @@ public class Player : MonoBehaviour {
 			SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
 		}
 	}
-
+	//whn player falls gameover scene is loaded
 	void OnBecameInvisible()
 	{
 		Time.timeScale = 0;
